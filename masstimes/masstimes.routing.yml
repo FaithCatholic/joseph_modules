@@ -1,0 +1,8 @@
+masstimes.example:
+  path: '/masstimes/example'
+  defaults:
+    _title: 'Example'
+    _controller: '\Drupal\masstimes\Controller\MasstimesController::build'
+  requirements:
+    _permission: 'access content'
+
