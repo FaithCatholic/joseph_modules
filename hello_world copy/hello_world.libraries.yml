@@ -1,0 +1,8 @@
+hello_world_geolocation:
+  version: 1.x
+  js:
+    js/hello_world_geolocation.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/once

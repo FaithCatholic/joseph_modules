@@ -1,0 +1,7 @@
+hello_world.api_fetch:
+  path: '/hello-world/fetch-data'
+  defaults:
+    _controller: 'Drupal\hello_world\Controller\HelloWorldController::fetchData'
+    _title: 'Fetch API Data'
+  requirements:
+    _permission: 'access content'
