@@ -1,0 +1,4 @@
+services:
+  hello_world.test:
+    class: Drupal\hello_world\HelloWorldTest
+    arguments: ['@http_client']

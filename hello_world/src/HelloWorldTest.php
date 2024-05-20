@@ -1,15 +1,19 @@
 <?php
 
-namespace Drupal\hello_world\Controller;
+namespace Drupal\hello_world;
 
+use StringTranslationTrait;
 use \Drupal\Core\Utility\Error;
-use Drupal\Core\Controller\ControllerBase;
 use GuzzleHttp\ClientInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
-class HelloWorldController extends ControllerBase {
-    
+class HelloWorldTest {
+
+   
+
+
     protected $httpClient;
+
 
     public function __construct(ClientInterface $http_client) {
         $this->httpClient = $http_client;
@@ -20,10 +24,6 @@ class HelloWorldController extends ControllerBase {
             $container->get('http_client')
         );
     }
-
-   
-
-
     public function fetchData() {
         $api_key = '74e45c40-7f11-11e1-b0c4-0800200c9a66';
         $latitude = '42.733620';
@@ -61,4 +61,4 @@ class HelloWorldController extends ControllerBase {
             ];
         }
     }
-    }
+}

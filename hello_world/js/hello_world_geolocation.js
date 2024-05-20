@@ -10,7 +10,6 @@
                         const latitude = position.coords.latitude;
                         const longitude = position.coords.longitude;
                         const locationInfo = `Lat: ${latitude}, Long: ${longitude}`;
-
                         
 
                         $('#location-info').html(locationInfo);
