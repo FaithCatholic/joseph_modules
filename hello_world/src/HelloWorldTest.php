@@ -25,7 +25,6 @@ class HelloWorldTest {
         );
     }
     public function fetchData() {
-        $api_key = '74e45c40-7f11-11e1-b0c4-0800200c9a66';
         $latitude = '42.733620';
         $longitude = '-84.553932';
         
