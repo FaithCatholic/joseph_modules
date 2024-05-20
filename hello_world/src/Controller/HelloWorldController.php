@@ -22,7 +22,7 @@ class HelloWorldController extends ControllerBase {
 
     public function helloWorld() {
         return [
-            $this->service->fetchData(),
+            //$this->service->fetchData(),
         ];
     }
 }

@@ -32,8 +32,8 @@ class HelloWorldTest {
         
         try {
             
-            $response = $this->httpClient->request('GET', $url );
-            $data = json_decode($response->getBody()->getContents(), TRUE);
+            #$response = $this->httpClient->request('GET', $url );
+            #$data = json_decode($response->getBody()->getContents(), TRUE);
            
             $render = [
                 '#type' => 'markup',
