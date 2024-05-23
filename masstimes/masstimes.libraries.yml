@@ -1,0 +1,8 @@
+masstimes_geolocation:
+  version: 1.x
+  js:
+    js/masstimes_geolocation.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/once

@@ -3,23 +3,26 @@
 namespace Drupal\masstimes\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\masstimes\massTimesService;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
-/**
- * Returns responses for masstimes routes.
- */
-class MasstimesController extends ControllerBase {
+class massTimesController extends ControllerBase {
+    
+    
+    protected $service;
 
-  /**
-   * Builds the response.
-   */
-  public function build() {
+    public function __construct(massTimesService $service) {
+        $this->service = $service;
+    }
+   
+    public static function create(ContainerInterface $container) {
+        return new static($container->get('masstimes.service')
+        );
+    }
 
-    $build['content'] = [
-      '#type' => 'item',
-      '#markup' => $this->t('It works!'),
-    ];
-
-    return $build;
-  }
-
+    public function output() {
+        return [
+            $this->service->fetchData(),
+        ];
+    }
 }

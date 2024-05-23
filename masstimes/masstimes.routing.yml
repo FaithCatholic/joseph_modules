@@ -1,8 +1,8 @@
-masstimes.example:
-  path: '/masstimes/example'
+hello_world.api_fetch:
+  path: '/masstimes/fetch-data'
   defaults:
-    _title: 'Example'
-    _controller: '\Drupal\masstimes\Controller\MasstimesController::build'
+    _controller: 'Drupal\masstimes\Controller\MasstimesController::output'
+    _title: 'Fetch API Data'
   requirements:
     _permission: 'access content'
 
