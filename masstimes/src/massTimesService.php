@@ -7,23 +7,42 @@ use GuzzleHttp\ClientInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 
+/**
+ * Class massTimesService.
+ */
 class massTimesService {
 
    
-
+    /**
+     * @var ClientInterface $httpClient
+     */
 
     protected $httpClient;
 
-
+    /**
+     * Class constructor.
+     */
     public function __construct(ClientInterface $http_client) {
         $this->httpClient = $http_client;
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public static function create(ContainerInterface $container) {
         return new static(
             $container->get('http_client')
         );
     }
+
+    /**
+     * Function that is provided user coords from JS hooks and Controller.php. Appends to url for API request
+     * 
+     * @param $latitude
+     * @param $longitude
+     * @return array
+     */
     public function fetchData($latitude, $longitude) {
         
         

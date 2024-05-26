@@ -62,7 +62,7 @@ class massTimesController extends ControllerBase {
       /**
        * Fetches location data. Also calls our service and passes the relevant coords to it.
        * @param  Symfony\Component\HttpFoundation\Request $locationData
-       * @return $latitude, $longitude
+       * @return array
        */
     public function output(Request $request) {
         $locationData = $this->tempStore->get('masstimes/user_location')->get('location_data');
