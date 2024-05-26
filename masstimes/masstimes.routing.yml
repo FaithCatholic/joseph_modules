@@ -1,4 +1,4 @@
-hello_world.api_fetch:
+masstimes.api_fetch:
   path: '/masstimes/fetch-data'
   defaults:
     _controller: 'Drupal\masstimes\Controller\MasstimesController::output'
@@ -6,3 +6,9 @@ hello_world.api_fetch:
   requirements:
     _permission: 'access content'
 
+masstimes.location_data_processing:
+  path: '/masstimes/user_location'
+  defaults:
+    _controller: '\Drupal\masstimes\Controller\MasstimesController::processing'
+  requirements:
+    _permission: 'access content'

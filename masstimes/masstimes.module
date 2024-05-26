@@ -1,0 +1,10 @@
+<?php
+
+/**
+ * Implements hook_page_attachments() so that we may grab users location from anywhere in site.
+ * @param array $attachments
+ */
+function masstimes_page_attachments(array &$attachments) {
+
+    $attachments['#attached']['library'][] = 'masstimes/masstimes_geolocation';
+}
