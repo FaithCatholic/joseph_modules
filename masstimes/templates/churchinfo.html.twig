@@ -1,0 +1,26 @@
+<div class="church-info">
+  {{ dump(church_data) }}
+  <h2>{{ church_data.name }}</h2>
+  <h2>{{ church_data.name }}</h2>
+  <p><strong>Address:</strong> {{ church_data.church_address_street_address }}, {{ church_data.church_address_city_name }}, {{ church_data.church_address_providence_name }}, {{ church_data.church_address_country_territory_name }}, {{ church_data.church_address_postal_code }}</p>
+  <p><strong>Diocese:</strong> {{ church_data.diocese_name }}</p>
+  <p><strong>Phone:</strong> {{ church_data.phone_number }}</p>
+  <p><strong>Email:</strong> <a href="mailto:{{ church_data.email }}">{{ church_data.email }}</a></p>
+  <p><strong>Website:</strong> <a href="http://{{ church_data.url }}">{{ church_data.url }}</a></p>
+  <p><strong>Wheelchair Access:</strong> {{ church_data.wheel_chair_access ? 'Yes' : 'No' }}</p>
+  <p><strong>Location:</strong> Latitude: {{ church_data.latitude }}, Longitude: {{ church_data.longitude }}</p>
+
+  <h3>Worship Times</h3>
+  <ul>
+    {% for time in church_data.church_worship_times %}
+      <li>
+        <strong>{{ time.service_typename }}</strong>
+        {% if time.comment %} ({{ time.comment }}){% endif %} - {{ time.language }}
+        <br>
+        <strong>Day of the Week:</strong> {{ time.day_of_week }}
+        <br>
+        <strong>Time:</strong> {{ time.time_start }} to {{ time.time_end }}
+      </li>
+    {% endfor %}
+  </ul>
+</div>

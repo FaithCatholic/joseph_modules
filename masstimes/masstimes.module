@@ -8,3 +8,26 @@ function masstimes_page_attachments(array &$attachments) {
 
     $attachments['#attached']['library'][] = 'masstimes/masstimes_geolocation';
 }
+
+
+/**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+function masstimes_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+    if (isset($variables['node']) && $variables['node']->getType() == 'church_info') {
+      $suggestions[] = 'page__church_info';
+    }
+  }
+  
+  /**
+   * Implements hook_theme().
+   */
+  function masstimes_theme($existing, $type, $theme, $path) {
+    return [
+      'churchinfo' => [
+        'variables' => ['church_data' => NULL],
+        'template' => 'churchinfo',
+        'path' => \Drupal::service('extension.list.module')->getPath('masstimes') . '/templates',
+      ],
+    ];
+  }
