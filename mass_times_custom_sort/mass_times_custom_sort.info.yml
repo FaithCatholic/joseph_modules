@@ -1,0 +1,11 @@
+name: 'customsort'
+type: module
+description: 'custom sorting for mass_times content type'
+package: Custom
+core_version_requirement: ^10 || ^11
+dependencies:
+  - mass_times:mass_times
+
+autoload:
+  psr-4:
+    Drupal\mass_times_custom_sort\: src/

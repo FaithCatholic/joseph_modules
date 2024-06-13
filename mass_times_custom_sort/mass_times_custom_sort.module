@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * Implements hook_views_data_alter().
+ */
+function mass_times_custom_sort_views_data_alter(array &$data) {
+    $data['mass_times__field_day_of_week']['mass_times'] = array(
+      'title' => t('Custom day of week sort'),
+      'group' => t('Mass times'),
+      'help' => t('Sort by day of week, mon - sat.'),
+      'sort' => array(
+        'field' => 'field_day_of_week_value',
+        'id' => 'mass_times',
+      ),
+    );
+  }

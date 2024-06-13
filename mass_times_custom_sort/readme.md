@@ -1,0 +1,1 @@
+To be used in conjunction with Mass Times content type module, wherein dates are not sorted properly.
