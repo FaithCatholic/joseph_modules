@@ -1,0 +1,3 @@
+[submodule "custom_event_date_patch"]
+	path = custom_event_date_patch
+	url = https://github.com/FaithCatholic/custom_event_date
